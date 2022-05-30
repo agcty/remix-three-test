@@ -1,53 +1,27 @@
-# Welcome to Remix!
+# Packages like react-three-fiber do not work with remix dev.
 
-- [Remix Docs](https://remix.run/docs)
+## Error Reproduction
 
-## Development
-
-From your terminal:
-
-```sh
-npm run dev
+```
+1. clone this repo
+2. pnpm install
+3. pnpm run dev
+4. Open the browser in incognito mode, otherwise there will be weird errors (seems to be an issue with react 18)
+5. Error occurs: Cannot initialize 'routeModules'. This normally occurs when you have server code in your client modules. 
+Digging into console: Uncaught SyntaxError: Identifier 'React' has already been declared
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
+On the other hand, running `pnpm build && pnpm start` works fine, but why?
 
-## Deployment
+Try to compare build/index.js after running `pnpm build && pnpm start` and after running `pnpm run dev`.
 
-First, build your app for production:
+Both outputs seem to be the same (except a sourcemap comment in the dev output).
 
-```sh
-npm run build
-```
+In this comment, https://github.com/remix-run/remix/issues/2987#issuecomment-1109989928 it is mentioned that the issue could be because of esbuild.
+However, given both outputs are the same, this seems unlikely?
 
-Then run the app in production mode:
 
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+### Related issues
+https://github.com/evanw/esbuild/issues/475
+https://github.com/remix-run/remix/issues/2987
+https://github.com/remix-run/remix/issues/2692#issuecomment-1092961987
