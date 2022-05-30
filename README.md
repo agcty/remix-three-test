@@ -1,4 +1,4 @@
-# Packages like react-three-fiber/framer-motion do not work with remix in dev mode.
+Packages like react-three-fiber/framer-motion do not work with remix in dev mode.
 
 ## Error Reproduction
 
@@ -8,7 +8,6 @@
 3. pnpm run dev
 4. Open the browser in incognito mode, otherwise there will be weird errors (seems to be an issue with react 18)
 5. visit http://localhost:3000/ or http://localhost:3000/motion
-```
 6. Error occurs: Cannot initialize 'routeModules'. This normally occurs when you have server code in your client modules. 
 Digging into console: Uncaught SyntaxError: Identifier 'React' has already been declared
 7. git checkout react-17 and try everything again, errors persist
