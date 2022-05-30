@@ -11,7 +11,9 @@
 ```
 6. Error occurs: Cannot initialize 'routeModules'. This normally occurs when you have server code in your client modules. 
 Digging into console: Uncaught SyntaxError: Identifier 'React' has already been declared
+7. git checkout react-17 and try everything again, errors persist
 ```
+
 
 On the other hand, running `pnpm build && pnpm start` works fine, but why?
 
