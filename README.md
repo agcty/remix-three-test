@@ -23,6 +23,8 @@ Both outputs seem to be the same (except a sourcemap comment in the dev output).
 In this comment, https://github.com/remix-run/remix/issues/2987#issuecomment-1109989928 it is mentioned that the issue could be because of esbuild.
 However, given both outputs are the same, this seems unlikely?
 
+**Update**:
+After further investigation, it seems like the issue can be pinpointed to just the @react-three/drei package? Not 100% sure but seems like it. Hard to tell because caching sometimes makes it hard to reproduce for some reason. But if you comment out the <Box> component in index.tsx, the dev build should work.
 
 This issue renders Remix basically unusable in dev mode.
 
