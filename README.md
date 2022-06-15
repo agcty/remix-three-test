@@ -12,6 +12,10 @@ Cannot initialize 'routeModules'. This normally occurs when you have server code
 
 In the console, it says: Identifier 'React' has already been declared.
 
-Fixing the issue:
+## Fixing the issue:
 
-1. `yarn patch-package`
+Option 1: Very strangely, you can fix the issue by copying the contents of /routes/index.tsx and pasting it into another route like /routes/other-router.tsx. If there are >1 routes that use the affected library it seems to work.
+
+Option 2: Patching remix to minify dev builds
+For some reason, if you patch remix to minify dev builds, the issue goes away, (try deleting /routes/other-router.tsx, should still work now)
+You can apply the patch with `yarn patch-package`
