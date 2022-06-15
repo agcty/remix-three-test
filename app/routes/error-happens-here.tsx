@@ -10,7 +10,7 @@ export default function Index() {
         height: "100vh",
       }}
     >
-      <h1>Error reproduction of certain libraries not working if remix compile doesn't minify</h1>
+      <h1>Drei example</h1>
 
       <Canvas>
         <Box />
