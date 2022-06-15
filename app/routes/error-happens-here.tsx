@@ -1,5 +1,6 @@
 import { Box, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Link } from "@remix-run/react";
 
 export default function Index() {
   return (
@@ -11,6 +12,8 @@ export default function Index() {
       }}
     >
       <h1>Drei example</h1>
+
+      <Link to="/">Index</Link>
 
       <Canvas>
 <Stage>
