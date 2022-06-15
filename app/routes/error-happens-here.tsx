@@ -1,4 +1,4 @@
-import { Box } from "@react-three/drei";
+import { Box, Stage } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 export default function Index() {
@@ -13,7 +13,10 @@ export default function Index() {
       <h1>Drei example</h1>
 
       <Canvas>
-        <Box />
+<Stage>
+<Box />
+</Stage>
+
       </Canvas>
     </div>
   );
