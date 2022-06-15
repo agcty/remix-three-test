@@ -1,0 +1,13 @@
+diff --git a/node_modules/@remix-run/dev/compiler.js b/node_modules/@remix-run/dev/compiler.js
+index e1c511d..9ce7839 100644
+--- a/node_modules/@remix-run/dev/compiler.js
++++ b/node_modules/@remix-run/dev/compiler.js
+@@ -325,7 +325,7 @@ async function createBrowserBuild(config, options) {
+     incremental: options.incremental,
+     mainFields: ["browser", "module", "main"],
+     treeShaking: true,
+-    minify: options.mode === build$1.BuildMode.Production,
++    minify: true,
+     entryNames: "[dir]/[name]-[hash]",
+     chunkNames: "_shared/[name]-[hash]",
+     assetNames: "_assets/[name]-[hash]",
