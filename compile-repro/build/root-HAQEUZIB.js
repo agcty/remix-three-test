@@ -5,10 +5,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration
-} from "./compile-repro/build/public/_shared/chunk-TEX3JCDN.js";
-import "./compile-repro/build/public/_shared/chunk-3XFVFRKA.js";
+} from "./compile-repro/build/public/_shared/chunk-QYSLIJ6N.js";
+import {
+  React,
+  init_react_shim
+} from "./compile-repro/build/public/_shared/chunk-IYS6XIOF.js";
 
 // app/root.tsx?browser
+init_react_shim();
 var meta = () => ({
   charset: "utf-8",
   title: "New Remix App",
@@ -23,4 +27,4 @@ export {
   App as default,
   meta
 };
-//# sourceMappingURL=compile-repro/build/public/root-43LNWBQL.js.map
+//# sourceMappingURL=compile-repro/build/public/root-HAQEUZIB.js.map

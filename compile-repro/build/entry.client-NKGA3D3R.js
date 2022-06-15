@@ -1,16 +1,19 @@
 import {
   RemixBrowser
-} from "./compile-repro/build/public/_shared/chunk-TEX3JCDN.js";
+} from "./compile-repro/build/public/_shared/chunk-QYSLIJ6N.js";
 import {
+  React,
   __commonJS,
   __toESM,
+  init_react_shim,
   require_react
-} from "./compile-repro/build/public/_shared/chunk-3XFVFRKA.js";
+} from "./compile-repro/build/public/_shared/chunk-IYS6XIOF.js";
 
 // node_modules/react-dom/node_modules/scheduler/cjs/scheduler.development.js
 var require_scheduler_development = __commonJS({
   "node_modules/react-dom/node_modules/scheduler/cjs/scheduler.development.js"(exports) {
     "use strict";
+    init_react_shim();
     if (true) {
       (function() {
         "use strict";
@@ -461,6 +464,7 @@ var require_scheduler_development = __commonJS({
 var require_scheduler = __commonJS({
   "node_modules/react-dom/node_modules/scheduler/index.js"(exports, module) {
     "use strict";
+    init_react_shim();
     if (false) {
       module.exports = null;
     } else {
@@ -473,15 +477,16 @@ var require_scheduler = __commonJS({
 var require_react_dom_development = __commonJS({
   "node_modules/react-dom/cjs/react-dom.development.js"(exports) {
     "use strict";
+    init_react_shim();
     if (true) {
       (function() {
         "use strict";
         if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") {
           __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
         }
-        var React2 = require_react();
+        var React = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -1881,7 +1886,7 @@ var require_react_dom_development = __commonJS({
           {
             if (props.value == null) {
               if (typeof props.children === "object" && props.children !== null) {
-                React2.Children.forEach(props.children, function(child) {
+                React.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10008,7 +10013,7 @@ var require_react_dom_development = __commonJS({
           }
         }
         var fakeInternalInstance = {};
-        var emptyRefsObject = new React2.Component().refs;
+        var emptyRefsObject = new React.Component().refs;
         var didWarnAboutStateAssignmentForComponent;
         var didWarnAboutUninitializedState;
         var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -20764,6 +20769,7 @@ var require_react_dom_development = __commonJS({
 var require_react_dom = __commonJS({
   "node_modules/react-dom/index.js"(exports, module) {
     "use strict";
+    init_react_shim();
     if (false) {
       checkDCE();
       module.exports = null;
@@ -20777,6 +20783,7 @@ var require_react_dom = __commonJS({
 var require_client = __commonJS({
   "node_modules/react-dom/client.js"(exports) {
     "use strict";
+    init_react_shim();
     var m = require_react_dom();
     if (false) {
       exports.createRoot = m.createRoot;
@@ -20805,6 +20812,7 @@ var require_client = __commonJS({
 });
 
 // app/entry.client.tsx
+init_react_shim();
 var import_client = __toESM(require_client());
 (0, import_client.hydrateRoot)(document, /* @__PURE__ */ React.createElement(RemixBrowser, null));
 /**
@@ -20838,4 +20846,4 @@ var import_client = __toESM(require_client());
  * @internal
  * @license Modernizr 3.0.0pre (Custom Build) | MIT
  */
-//# sourceMappingURL=compile-repro/build/public/entry.client-SQ7RJ23C.js.map
+//# sourceMappingURL=compile-repro/build/public/entry.client-NKGA3D3R.js.map

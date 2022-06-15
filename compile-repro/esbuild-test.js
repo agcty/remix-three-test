@@ -2,12 +2,14 @@ var esbuild = require("esbuild");
 var module$1 = require("module");
 const path = require("path");
 const fs = require("fs");
+var rimraf = require("rimraf");
 
 // let externals = module$1.builtinModules.filter(
 //   (mod) => !dependencies$1.includes(mod)
 // );
 
-// fs.rmSync("./build/", { recursive: true, force: true });
+// clean up before build
+rimraf.sync(path.resolve(__dirname, "build"));
 
 const reactShim = path.resolve(__dirname, "react-shim.ts");
 
@@ -25,7 +27,7 @@ function build() {
     format: "esm",
     // external: externals,
     // not using deno, simplifying to always use the shim to bypass referencing config
-    // inject: [reactShim],
+    inject: [reactShim],
     //   loader: loaders.loaders,
     bundle: true,
     logLevel: "silent",

@@ -5,6 +5,9 @@ var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
 var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
+var __esm = (fn, res) => function __init() {
+  return fn && (res = (0, fn[__getOwnPropNames(fn)[0]])(fn = 0)), res;
+};
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
@@ -28,6 +31,7 @@ var __toESM = (module, isNodeMode) => {
 var require_react_development = __commonJS({
   "node_modules/react/cjs/react.development.js"(exports, module) {
     "use strict";
+    init_react_shim();
     if (true) {
       (function() {
         "use strict";
@@ -1816,6 +1820,7 @@ var require_react_development = __commonJS({
 var require_react = __commonJS({
   "node_modules/react/index.js"(exports, module) {
     "use strict";
+    init_react_shim();
     if (false) {
       module.exports = null;
     } else {
@@ -1824,7 +1829,16 @@ var require_react = __commonJS({
   }
 });
 
+// compile-repro/react-shim.ts
+var React;
+var init_react_shim = __esm({
+  "compile-repro/react-shim.ts"() {
+    React = __toESM(require_react());
+  }
+});
+
 // node_modules/@babel/runtime/helpers/esm/extends.js
+init_react_shim();
 function _extends() {
   _extends = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -1844,8 +1858,10 @@ export {
   __commonJS,
   __export,
   __toESM,
-  _extends,
-  require_react
+  require_react,
+  React,
+  init_react_shim,
+  _extends
 };
 /**
  * @license React
@@ -1856,4 +1872,4 @@ export {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-//# sourceMappingURL=compile-repro/build/public/_shared/chunk-3XFVFRKA.js.map
+//# sourceMappingURL=compile-repro/build/public/_shared/chunk-IYS6XIOF.js.map

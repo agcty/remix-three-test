@@ -1,10 +1,15 @@
 import {
   __toESM,
   _extends,
+  init_react_shim,
   require_react
-} from "./compile-repro/build/public/_shared/chunk-3XFVFRKA.js";
+} from "./compile-repro/build/public/_shared/chunk-IYS6XIOF.js";
+
+// node_modules/react-router/index.js
+init_react_shim();
 
 // node_modules/history/index.js
+init_react_shim();
 var Action;
 (function(Action2) {
   Action2["Pop"] = "POP";
@@ -730,6 +735,7 @@ function Router(_ref3) {
 }
 
 // node_modules/react-router-dom/index.js
+init_react_shim();
 var import_react2 = __toESM(require_react());
 function _extends2() {
   _extends2 = Object.assign || function(target) {
@@ -883,7 +889,11 @@ function useLinkClickHandler(to, _temp) {
   }, [location, navigate, path, replaceProp, state, target, to]);
 }
 
+// node_modules/@remix-run/react/esm/components.js
+init_react_shim();
+
 // node_modules/@remix-run/react/esm/_virtual/_rollupPluginBabelHelpers.js
+init_react_shim();
 function _extends3() {
   _extends3 = Object.assign ? Object.assign.bind() : function(target) {
     for (var i = 1; i < arguments.length; i++) {
@@ -903,6 +913,7 @@ function _extends3() {
 var React2 = __toESM(require_react());
 
 // node_modules/@remix-run/react/esm/errorBoundaries.js
+init_react_shim();
 var import_react3 = __toESM(require_react());
 var RemixErrorBoundary = class extends import_react3.default.Component {
   constructor(props) {
@@ -1018,13 +1029,18 @@ function RemixRootDefaultCatchBoundary() {
 }
 
 // node_modules/@remix-run/react/esm/invariant.js
+init_react_shim();
 function invariant2(value, message) {
   if (value === false || value === null || typeof value === "undefined") {
     throw new Error(message);
   }
 }
 
+// node_modules/@remix-run/react/esm/links.js
+init_react_shim();
+
 // node_modules/@remix-run/react/esm/routeModules.js
+init_react_shim();
 async function loadRouteModule(route, routeModulesCache) {
   if (route.id in routeModulesCache) {
     return routeModulesCache[route.id];
@@ -1204,6 +1220,7 @@ function parsePathPatch(href) {
 }
 
 // node_modules/@remix-run/react/esm/markup.js
+init_react_shim();
 function createHtml(html) {
   return {
     __html: html
@@ -1211,9 +1228,11 @@ function createHtml(html) {
 }
 
 // node_modules/@remix-run/react/esm/routes.js
+init_react_shim();
 var React = __toESM(require_react());
 
 // node_modules/@remix-run/react/esm/data.js
+init_react_shim();
 function isCatchResponse(response) {
   return response instanceof Response && response.headers.get("X-Remix-Catch") != null;
 }
@@ -1272,7 +1291,11 @@ function getActionInit(submission, signal) {
   };
 }
 
+// node_modules/@remix-run/react/esm/transition.js
+init_react_shim();
+
 // node_modules/@remix-run/react/esm/routeMatching.js
+init_react_shim();
 function matchClientRoutes(routes, location) {
   let matches = matchRoutes(routes, location);
   if (!matches)
@@ -3057,6 +3080,7 @@ var LiveReload = false ? () => null : function LiveReload2({
 };
 
 // node_modules/@remix-run/react/esm/browser.js
+init_react_shim();
 var React3 = __toESM(require_react());
 function RemixBrowser(_props) {
   let historyRef = React3.useRef();
@@ -3085,6 +3109,7 @@ function RemixBrowser(_props) {
 }
 
 // node_modules/@remix-run/react/esm/scroll-restoration.js
+init_react_shim();
 var React4 = __toESM(require_react());
 var STORAGE_KEY = "positions";
 var positions = {};
@@ -3180,6 +3205,9 @@ function useScrollRestoration() {
   }, [transition]);
 }
 
+// node_modules/@remix-run/react/esm/index.js
+init_react_shim();
+
 export {
   Outlet,
   Links,
@@ -3219,4 +3247,4 @@ export {
  *
  * @license MIT
  */
-//# sourceMappingURL=compile-repro/build/public/_shared/chunk-TEX3JCDN.js.map
+//# sourceMappingURL=compile-repro/build/public/_shared/chunk-QYSLIJ6N.js.map

@@ -1,15 +1,18 @@
 import {
+  React,
   __commonJS,
   __export,
   __toESM,
   _extends,
+  init_react_shim,
   require_react
-} from "./compile-repro/build/public/_shared/chunk-3XFVFRKA.js";
+} from "./compile-repro/build/public/_shared/chunk-IYS6XIOF.js";
 
 // node_modules/react-reconciler/cjs/react-reconciler-constants.development.js
 var require_react_reconciler_constants_development = __commonJS({
   "node_modules/react-reconciler/cjs/react-reconciler-constants.development.js"(exports) {
     "use strict";
+    init_react_shim();
     if (true) {
       (function() {
         "use strict";
@@ -38,6 +41,7 @@ var require_react_reconciler_constants_development = __commonJS({
 var require_constants = __commonJS({
   "node_modules/react-reconciler/constants.js"(exports, module) {
     "use strict";
+    init_react_shim();
     if (false) {
       module.exports = null;
     } else {
@@ -50,6 +54,7 @@ var require_constants = __commonJS({
 var require_scheduler_development = __commonJS({
   "node_modules/scheduler/cjs/scheduler.development.js"(exports) {
     "use strict";
+    init_react_shim();
     if (true) {
       (function() {
         "use strict";
@@ -500,6 +505,7 @@ var require_scheduler_development = __commonJS({
 var require_scheduler = __commonJS({
   "node_modules/scheduler/index.js"(exports, module) {
     "use strict";
+    init_react_shim();
     if (false) {
       module.exports = null;
     } else {
@@ -512,13 +518,14 @@ var require_scheduler = __commonJS({
 var require_react_reconciler_development = __commonJS({
   "node_modules/react-reconciler/cjs/react-reconciler.development.js"(exports, module) {
     "use strict";
+    init_react_shim();
     if (true) {
       module.exports = function $$$reconciler($$$hostConfig) {
         var exports2 = {};
         "use strict";
-        var React5 = require_react();
+        var React4 = require_react();
         var Scheduler = require_scheduler();
-        var ReactSharedInternals = React5.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React4.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         var suppressWarning = false;
         function setSuppressWarning(newSuppressWarning) {
           {
@@ -3475,7 +3482,7 @@ var require_react_reconciler_development = __commonJS({
           }
         }
         var fakeInternalInstance = {};
-        var emptyRefsObject = new React5.Component().refs;
+        var emptyRefsObject = new React4.Component().refs;
         var didWarnAboutStateAssignmentForComponent;
         var didWarnAboutUninitializedState;
         var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -15045,6 +15052,7 @@ var require_react_reconciler_development = __commonJS({
 var require_react_reconciler = __commonJS({
   "node_modules/react-reconciler/index.js"(exports, module) {
     "use strict";
+    init_react_shim();
     if (false) {
       module.exports = null;
     } else {
@@ -15056,6 +15064,7 @@ var require_react_reconciler = __commonJS({
 // node_modules/debounce/index.js
 var require_debounce = __commonJS({
   "node_modules/debounce/index.js"(exports, module) {
+    init_react_shim();
     function debounce(func, wait, immediate) {
       var timeout, args, context2, timestamp, result;
       if (wait == null)
@@ -15106,6 +15115,12 @@ var require_debounce = __commonJS({
     module.exports = debounce;
   }
 });
+
+// app/routes/index.tsx?browser
+init_react_shim();
+
+// node_modules/@react-three/drei/index.js
+init_react_shim();
 
 // node_modules/three/build/three.module.js
 var three_module_exports = {};
@@ -15522,6 +15537,7 @@ __export(three_module_exports, {
   _SRGBAFormat: () => _SRGBAFormat,
   sRGBEncoding: () => sRGBEncoding
 });
+init_react_shim();
 var REVISION = "141";
 var MOUSE = { LEFT: 0, MIDDLE: 1, RIGHT: 2, ROTATE: 0, DOLLY: 1, PAN: 2 };
 var TOUCH = { ROTATE: 0, PAN: 1, DOLLY_PAN: 2, DOLLY_ROTATE: 3 };
@@ -43332,11 +43348,16 @@ if (typeof window !== "undefined") {
   }
 }
 
+// node_modules/@react-three/fiber/dist/react-three-fiber.esm.js
+init_react_shim();
+
 // node_modules/@react-three/fiber/dist/index-bfdbf5d7.esm.js
-var React2 = __toESM(require_react());
+init_react_shim();
+var React = __toESM(require_react());
 var import_constants = __toESM(require_constants());
 
 // node_modules/zustand/esm/index.mjs
+init_react_shim();
 var import_react = __toESM(require_react(), 1);
 function createStore(createState) {
   let state;
@@ -43450,6 +43471,7 @@ var import_react_reconciler = __toESM(require_react_reconciler());
 var import_scheduler = __toESM(require_scheduler());
 
 // node_modules/suspend-react/dist/index.js
+init_react_shim();
 function shallowEqualArrays(arrA, arrB, equal = (a, b) => a === b) {
   if (arrA === arrB)
     return true;
@@ -43513,9 +43535,9 @@ var clear = (keys2) => {
 // node_modules/@react-three/fiber/dist/index-bfdbf5d7.esm.js
 var isOrthographicCamera = (def) => def && def.isOrthographicCamera;
 var isSSR2 = typeof window === "undefined" || !window.navigator || /ServerSideRendering|^Deno\//.test(window.navigator.userAgent);
-var useIsomorphicLayoutEffect2 = isSSR2 ? React2.useEffect : React2.useLayoutEffect;
+var useIsomorphicLayoutEffect2 = isSSR2 ? React.useEffect : React.useLayoutEffect;
 function useMutableCallback(fn) {
-  const ref = React2.useRef(fn);
+  const ref = React.useRef(fn);
   useIsomorphicLayoutEffect2(() => void (ref.current = fn), [fn]);
   return ref;
 }
@@ -43528,7 +43550,7 @@ function Block({
   }, [set]);
   return null;
 }
-var ErrorBoundary = class extends React2.Component {
+var ErrorBoundary = class extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
@@ -44443,7 +44465,7 @@ function createRenderer(roots2, getEventPriority2) {
   };
 }
 var isRenderer = (def) => !!(def != null && def.render);
-var context = /* @__PURE__ */ React2.createContext(null);
+var context = /* @__PURE__ */ React.createContext(null);
 var createStore2 = (invalidate2, advance2) => {
   const rootState = create((set, get) => {
     const position = new Vector3();
@@ -44591,7 +44613,7 @@ var createStore2 = (invalidate2, advance2) => {
         active: false,
         priority: 0,
         frames: 0,
-        lastEvent: /* @__PURE__ */ React2.createRef(),
+        lastEvent: /* @__PURE__ */ React.createRef(),
         interaction: [],
         hovered: /* @__PURE__ */ new Map(),
         subscribers: [],
@@ -44959,7 +44981,7 @@ function createRoot(canvas) {
     render(children) {
       if (!configured)
         this.configure();
-      reconciler.updateContainer(/* @__PURE__ */ React2.createElement(Provider, {
+      reconciler.updateContainer(/* @__PURE__ */ React.createElement(Provider, {
         store,
         children,
         onCreated,
@@ -44991,7 +45013,7 @@ function Provider({
     if (!store.getState().events.connected)
       state.events.connect == null ? void 0 : state.events.connect(rootElement);
   }, []);
-  return /* @__PURE__ */ React2.createElement(context.Provider, {
+  return /* @__PURE__ */ React.createElement(context.Provider, {
     value: store
   }, children);
 }
@@ -45026,13 +45048,14 @@ function unmountComponentAtNode(canvas, callback) {
 reconciler.injectIntoDevTools({
   bundleType: false ? 0 : 1,
   rendererPackageName: "@react-three/fiber",
-  version: React2.version
+  version: React.version
 });
 
 // node_modules/@react-three/fiber/dist/react-three-fiber.esm.js
-var React3 = __toESM(require_react());
+var React2 = __toESM(require_react());
 
 // node_modules/react-use-measure/dist/web.js
+init_react_shim();
 var import_react2 = __toESM(require_react());
 var import_debounce = __toESM(require_debounce());
 function useMeasure(_temp) {
@@ -45257,7 +45280,7 @@ function createPointerEvents(store) {
     }
   };
 }
-var Canvas = /* @__PURE__ */ React3.forwardRef(function Canvas2({
+var Canvas = /* @__PURE__ */ React2.forwardRef(function Canvas2({
   children,
   fallback,
   resize,
@@ -45278,7 +45301,7 @@ var Canvas = /* @__PURE__ */ React3.forwardRef(function Canvas2({
   onCreated,
   ...props
 }, forwardedRef) {
-  React3.useMemo(() => extend(three_module_exports), []);
+  React2.useMemo(() => extend(three_module_exports), []);
   const [containerRef, {
     width,
     height
@@ -45290,18 +45313,18 @@ var Canvas = /* @__PURE__ */ React3.forwardRef(function Canvas2({
     },
     ...resize
   });
-  const canvasRef = React3.useRef(null);
-  const divRef = React3.useRef(null);
-  const [canvas, setCanvas] = React3.useState(null);
-  React3.useImperativeHandle(forwardedRef, () => canvasRef.current);
+  const canvasRef = React2.useRef(null);
+  const divRef = React2.useRef(null);
+  const [canvas, setCanvas] = React2.useState(null);
+  React2.useImperativeHandle(forwardedRef, () => canvasRef.current);
   const handlePointerMissed = useMutableCallback(onPointerMissed);
-  const [block, setBlock] = React3.useState(false);
-  const [error, setError] = React3.useState(false);
+  const [block, setBlock] = React2.useState(false);
+  const [error, setError] = React2.useState(false);
   if (block)
     throw block;
   if (error)
     throw error;
-  const root = React3.useRef(null);
+  const root = React2.useRef(null);
   if (width > 0 && height > 0 && canvas) {
     if (!root.current)
       root.current = createRoot(canvas);
@@ -45328,10 +45351,10 @@ var Canvas = /* @__PURE__ */ React3.forwardRef(function Canvas2({
         onCreated == null ? void 0 : onCreated(state);
       }
     });
-    root.current.render(/* @__PURE__ */ React3.createElement(ErrorBoundary, {
+    root.current.render(/* @__PURE__ */ React2.createElement(ErrorBoundary, {
       set: setError
-    }, /* @__PURE__ */ React3.createElement(React3.Suspense, {
-      fallback: /* @__PURE__ */ React3.createElement(Block, {
+    }, /* @__PURE__ */ React2.createElement(React2.Suspense, {
+      fallback: /* @__PURE__ */ React2.createElement(Block, {
         set: setBlock
       })
     }, children)));
@@ -45339,11 +45362,11 @@ var Canvas = /* @__PURE__ */ React3.forwardRef(function Canvas2({
   useIsomorphicLayoutEffect2(() => {
     setCanvas(canvasRef.current);
   }, []);
-  React3.useEffect(() => {
+  React2.useEffect(() => {
     if (canvas)
       return () => unmountComponentAtNode(canvas);
   }, [canvas]);
-  return /* @__PURE__ */ React3.createElement("div", _extends({
+  return /* @__PURE__ */ React2.createElement("div", _extends({
     ref: divRef,
     style: {
       position: "relative",
@@ -45352,13 +45375,13 @@ var Canvas = /* @__PURE__ */ React3.forwardRef(function Canvas2({
       overflow: "hidden",
       ...style
     }
-  }, props), /* @__PURE__ */ React3.createElement("div", {
+  }, props), /* @__PURE__ */ React2.createElement("div", {
     ref: containerRef,
     style: {
       width: "100%",
       height: "100%"
     }
-  }, /* @__PURE__ */ React3.createElement("canvas", {
+  }, /* @__PURE__ */ React2.createElement("canvas", {
     ref: canvasRef,
     style: {
       display: "block"
@@ -45367,16 +45390,17 @@ var Canvas = /* @__PURE__ */ React3.forwardRef(function Canvas2({
 });
 
 // node_modules/@react-three/drei/core/shapes.js
-var React4 = __toESM(require_react());
+init_react_shim();
+var React3 = __toESM(require_react());
 function create2(type) {
   const El = type + "BufferGeometry";
-  return /* @__PURE__ */ React4.forwardRef(({
+  return /* @__PURE__ */ React3.forwardRef(({
     args,
     children,
     ...props
-  }, ref) => /* @__PURE__ */ React4.createElement("mesh", _extends({
+  }, ref) => /* @__PURE__ */ React3.createElement("mesh", _extends({
     ref
-  }, props), /* @__PURE__ */ React4.createElement(El, {
+  }, props), /* @__PURE__ */ React3.createElement(El, {
     attach: "geometry",
     args
   }), children));
@@ -45445,4 +45469,4 @@ export {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-//# sourceMappingURL=compile-repro/build/public/routes/index-XQR3WDH3.js.map
+//# sourceMappingURL=compile-repro/build/public/routes/index-NV5JLEFW.js.map

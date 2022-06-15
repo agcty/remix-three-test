@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0-next-be229c565-20220613",
     "react-spring": "^9.4.5",
     "remix-utils": "^3.2.0",
+    "rimraf": "^3.0.2",
     "three": "^0.141.0",
     "use-sound": "^4.0.1"
   },
